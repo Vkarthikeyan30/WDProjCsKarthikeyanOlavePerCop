@@ -67,7 +67,7 @@
 
 .banner-content {
     position: absolute;
-    top: 30%;
+    top: 22.5%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -104,7 +104,7 @@
 /*main info 1*/
 .main-content {
     position: absolute;
-    top: 140%;
+    top: 155%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -125,4 +125,36 @@
     font-size: 1.2rem;
     color: #795548;
 }
+/*playtutorial*/
+.main2-content {
+    position: absolute;
+    top: 89%;
+    left: 80%;
+    transform: translate(-100%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    z-index: 10;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
 
+.main2-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #5D4037;
+}
+
+.main2-content p {
+    font-size: 1.2rem;
+    color: #795548;
+}
+/*picture*/
+
+.mainfo3 img {
+    width: 35%;
+    height: 90%;
+    border-radius: 5px;
+    filter: brightness(0.9);
+    transform: translate(65%, -50%);
+}
