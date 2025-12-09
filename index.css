@@ -158,3 +158,15 @@
     filter: brightness(0.9);
     transform: translate(65%, -50%);
 }
+
+/*last*/
+.footerz {
+    background-color: #eeba2b; /* Yellow background */
+    color: #a44a3f; /* Brown font color */
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, 50%);
+}
