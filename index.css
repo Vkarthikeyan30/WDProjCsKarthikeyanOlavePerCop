@@ -1,3 +1,4 @@
+/*navigation bar*/
 .navbar {
     background-color: #eeba2b; /* Yellow background */
     color: #a44a3f; /* Brown font color */
@@ -56,4 +57,47 @@
 .nav-link.active {
     background-color: rgba(93, 64, 55, 0.1);
     border-bottom: 3px solid #5D4037;
+}
+
+/*main thing*/
+.banner {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.banner-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    z-index: 10;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.banner-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #5D4037;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    color: #795548;
+}
+
+.banner-image {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9);
 }
