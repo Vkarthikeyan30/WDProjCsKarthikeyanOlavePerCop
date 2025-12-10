@@ -86,8 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Explore Button Click
     if (exploreBtn) {
         exploreBtn.addEventListener('click', function() {
-            alert("Exploring the glorious dynasties of Ancient China! From the legendary Xia to the culturally rich Song Dynasty, each contributed uniquely to Chinese civilization.");
-            
             // Animate the button
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
@@ -326,7 +324,7 @@ const gameEndings = {
         description: "Your brilliant military strategy secures a decisive victory against the Xiongnu. The northern borders are secure for a generation. The Emperor rewards you with land, titles, and honor for your family. Your name is recorded in the imperial histories as a great commander.",
         historicalContext: {
             title: "Historical Context: Han-Xiongnu Wars",
-            text: "The Han Dynasty (206 BCE-220 CE) indeed fought prolonged wars against the Xiongnu confederation. Emperor Wu (r. 141-87 BCE) launched major campaigns using strategies similar to these options. The most successful Han generals, like Wei Qing and Huo Qubing, used flanking maneuvers to achieve decisive victories around 119 BCE. These victories temporarily secured the Silk Road but drained Han resources. Source: Records of the Grand Historian by Sima Qian."
+            text: "The Han Dynasty (206 BCE-220 CE) indeed fought prolonged wars against the Xiongnu confederation. Emperor Wu (r. 141-87 BCE) launched major campaigns using strategies similar to these options. The most successful Han generals, like Wei Qing and Huo Qubing, used flanking maneuvers to achieve decisive victories around 119 BCE. These victories temporarily secured the Silk Road but drained Han resources."
         }
     },
     "tactical_victory": {
@@ -334,7 +332,7 @@ const gameEndings = {
         description: "You achieve victory but at tremendous cost. Thousands of Han soldiers perish, and the treasury is nearly emptied. While the Xiongnu are pushed back temporarily, resentment grows. You receive moderate rewards but face criticism for the heavy losses.",
         historicalContext: {
             title: "Historical Context: The Cost of War",
-            text: "Han campaigns against the Xiongnu were indeed extremely costly in both lives and resources. The Mobei campaign of 119 BCE, while successful, nearly bankrupted the Han treasury and caused widespread suffering. Emperor Wu's aggressive expansionist policies eventually led to economic strain and peasant rebellions. Source: Book of Han (Han Shu)."
+            text: "Han campaigns against the Xiongnu were indeed extremely costly in both lives and resources. The Mobei campaign of 119 BCE, while successful, nearly bankrupted the Han treasury and caused widespread suffering. Emperor Wu's aggressive expansionist policies eventually led to economic strain and peasant rebellions."
         }
     },
     "backfire": {
@@ -342,7 +340,7 @@ const gameEndings = {
         description: "Your scheme to divide the Xiongnu backfires spectacularly. A new, more unified and hostile Xiongnu confederation emerges under strong leadership. Border raids increase, and you are blamed for the worsened situation. You are demoted to a minor provincial post.",
         historicalContext: {
             title: "Historical Context: Xiongnu Consolidation",
-            text: "The Han Dynasty did attempt to use divide-and-conquer tactics against the Xiongnu, with mixed results. Sometimes these efforts backfired when particularly capable Xiongnu leaders like Modu Chanyu (r. 209-174 BCE) unified tribes more effectively. The heqin (marriage alliance) policy was often more successful than direct confrontation. Source: Cambridge History of China, Volume 1."
+            text: "The Han Dynasty did attempt to use divide-and-conquer tactics against the Xiongnu, with mixed results. Sometimes these efforts backfired when particularly capable Xiongnu leaders like Modu Chanyu (r. 209-174 BCE) unified tribes more effectively. The heqin (marriage alliance) policy was often more successful than direct confrontation."
         }
     },
     "peaceful_alliance": {
@@ -350,7 +348,7 @@ const gameEndings = {
         description: "Your diplomatic skills secure two decades of peace along the northern border. The Silk Road flourishes, bringing wealth and exotic goods to Chang'an. You are celebrated as a master diplomat and appointed to the highest councils of state.",
         historicalContext: {
             title: "Historical Context: Heqin Policy",
-            text: "The heqin ('harmonious kinship') policy of marriage alliances was actually used by early Han emperors toward the Xiongnu. While it brought temporary peace, it was expensive (requiring annual gifts) and seen as humiliating by some Han officials. Emperor Wu eventually abandoned this policy in favor of military campaigns. Source: Records of the Grand Historian."
+            text: "The heqin ('harmonious kinship') policy of marriage alliances was actually used by early Han emperors toward the Xiongnu. While it brought temporary peace, it was expensive (requiring annual gifts) and seen as humiliating by some Han officials. Emperor Wu eventually abandoned this policy in favor of military campaigns."
         }
     },
     "failed_diplomacy": {
@@ -358,7 +356,7 @@ const gameEndings = {
         description: "Your failed diplomacy leads to renewed war. The Emperor, angry at the wasted opportunity, sends you to a remote post. Major military campaigns are launched, costing thousands of lives and draining the treasury.",
         historicalContext: {
             title: "Historical Context: Diplomatic Failures",
-            text: "Han diplomats did face dangerous missions to the Xiongnu. The most famous, Su Wu, was captured and held for 19 years. Failed diplomacy often led to immediate military retaliation. The Xiongnu saw threats as weakness and typically responded with increased aggression. Source: Book of Han."
+            text: "Han diplomats did face dangerous missions to the Xiongnu. The most famous, Su Wu, was captured and held for 19 years. Failed diplomacy often led to immediate military retaliation. The Xiongnu saw threats as weakness and typically responded with increased aggression."
         }
     },
     "cultural_success": {
@@ -366,7 +364,7 @@ const gameEndings = {
         description: "Your cultural exchange program creates lasting connections between Han and Xiongnu elites. While border skirmishes continue, large-scale war is avoided for years. You establish a school for foreign nobles in Chang'an and write influential texts on border relations.",
         historicalContext: {
             title: "Historical Context: Cultural Exchange",
-            text: "Some Xiongnu nobles did adopt Han customs and send their sons to be educated in Chang'an. This sinicization process was a long-term strategy that eventually contributed to the decline of Xiongnu power. However, cultural assimilation worked both ways - some Han border residents adopted Xiongnu customs too. Source: The Xiongnu by R. de Crespigny."
+            text: "Some Xiongnu nobles did adopt Han customs and send their sons to be educated in Chang'an. This sinicization process was a long-term strategy that eventually contributed to the decline of Xiongnu power. However, cultural assimilation worked both ways - some Han border residents adopted Xiongnu customs too."
         }
     },
     "harsh_success": {
@@ -374,7 +372,7 @@ const gameEndings = {
         description: "The wall section is completed and proves effective against raids. However, stories of your harsh treatment of workers spread. Confucian scholars criticize your methods. While technically successful, your career advances no further.",
         historicalContext: {
             title: "Historical Context: Great Wall Construction",
-            text: "The Great Wall was built through conscripted labor under harsh conditions. Historical records mention worker rebellions and high mortality rates. While effective militarily, the human cost was tremendous. Later dynasties continued and expanded the wall using similar methods. Source: The Great Wall of China by Arthur Waldron."
+            text: "The Great Wall was built through conscripted labor under harsh conditions. Historical records mention worker rebellions and high mortality rates. While effective militarily, the human cost was tremendous. Later dynasties continued and expanded the wall using similar methods."
         }
     },
     "defensive_victory": {
@@ -382,7 +380,7 @@ const gameEndings = {
         description: "Your successful defenses make you a hero along the border. The completed wall section becomes legendary for its strength. You are promoted to regional commander and continue to serve with distinction for decades.",
         historicalContext: {
             title: "Historical Context: Border Defense",
-            text: "Han frontier commanders who successfully defended against Xiongnu raids were indeed celebrated and promoted. The wall was not a continuous barrier but a system of fortifications, watchtowers, and garrison towns. Successful commanders often came from border regions themselves. Source: Ancient China and Its Enemies by Nicola Di Cosmo."
+            text: "Han frontier commanders who successfully defended against Xiongnu raids were indeed celebrated and promoted. The wall was not a continuous barrier but a system of fortifications, watchtowers, and garrison towns. Successful commanders often came from border regions themselves."
         }
     },
     "political_downfall": {
@@ -390,7 +388,7 @@ const gameEndings = {
         description: "Despite your competence, political enemies undermine you with false accusations. You are removed from your post. The wall construction continues under others. You retire to your estate, writing bitter poetry about court intrigues.",
         historicalContext: {
             title: "Historical Context: Court Intrigue",
-            text: "Han court politics were notoriously treacherous. Officials frequently fell victim to accusations, whether true or false. The historian Sima Qian himself was castrated for defending a disgraced general. Survival in the Han court required political skill as much as competence. Source: Records of the Grand Historian."
+            text: "Han court politics were notoriously treacherous. Officials frequently fell victim to accusations, whether true or false. The historian Sima Qian himself was castrated for defending a disgraced general. Survival in the Han court required political skill as much as competence."
         }
     }
 };

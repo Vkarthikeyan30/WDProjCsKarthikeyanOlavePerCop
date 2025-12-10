@@ -53,7 +53,7 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: a44a3f;
+    color: #a44a3f;
     font-weight: 600;
     font-size: 1.1rem;
     padding: 0.5rem 0.8rem;
@@ -118,7 +118,7 @@ body {
 .banner-overlay p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    color: #FFD54F;
+    color: white;
 }
 
 .explore-btn {
@@ -172,8 +172,8 @@ body {
 .traditions-box h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: #5D4037;
-    border-bottom: 2px solid #D32F2F;
+    color: #9b111e;
+    border-bottom: 2px solid #9b111e;
     padding-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -181,7 +181,7 @@ body {
 }
 
 .traditions-box h3 i {
-    color: #D32F2F;
+    color: #9b111e;
 }
 
 .traditions-list {
@@ -203,11 +203,11 @@ body {
 .traditions-list h4 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
-    color: #D32F2F;
+    color: #9b111e;
 }
 
 .traditions-list p {
-    color: #5D4037;
+    color: black;
     line-height: 1.6;
 }
 
@@ -232,8 +232,8 @@ body {
 .overview-box h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: #5D4037;
-    border-bottom: 2px solid #D32F2F;
+    color: #9b111e;
+    border-bottom: 2px solid #9b111e;
     padding-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -241,7 +241,7 @@ body {
 }
 
 .overview-box h3 i {
-    color: #D32F2F;
+    color: #9b111e;
 }
 
 .overview-box p {
@@ -258,7 +258,7 @@ body {
 
 .dynasties h4 {
     margin-bottom: 1rem;
-    color: #5D4037;
+    color: #9b111e;
 }
 
 .dynasty-tags {
@@ -268,8 +268,8 @@ body {
 }
 
 .dynasty-tag {
-    background-color: #FFD54F;
-    color: #5D4037;
+    background-color: #9b111e;
+    color: white;
     padding: 0.5rem 1rem;
     border-radius: 30px;
     font-weight: 600;
@@ -278,8 +278,8 @@ body {
 }
 
 .dynasty-tag:hover {
-    background-color: #D32F2F;
-    color: white;
+    background-color: #e0b23b;
+    color: black;
     transform: translateY(-3px);
 }
 
@@ -296,8 +296,8 @@ body {
 .governance-box h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: #5D4037;
-    border-bottom: 2px solid #D32F2F;
+    color: #9b111e;
+    border-bottom: 2px solid #9b111e;
     padding-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -305,13 +305,13 @@ body {
 }
 
 .governance-box h3 i {
-    color: #D32F2F;
+    color: #9b111e;
 }
 
 .governance-box p {
     margin-bottom: 1.5rem;
     line-height: 1.7;
-    color: #5D4037;
+    color: black;
 }
 
 .governance-details {
@@ -326,11 +326,11 @@ body {
     background-color: rgba(255, 213, 79, 0.2);
     padding: 1.2rem;
     border-radius: 8px;
-    border-left: 4px solid #D32F2F;
+    border-left: 4px solid #9b111e;
 }
 
 .governance-item h4 {
-    color: #D32F2F;
+    color: #9b111e;
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -351,8 +351,8 @@ body {
 .quote-box h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: #5D4037;
-    border-bottom: 2px solid #D32F2F;
+    color: #9b111e;
+    border-bottom: 2px solid #9b111e;
     padding-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -361,28 +361,28 @@ body {
 }
 
 .quote-box h3 i {
-    color: #D32F2F;
+    color: #9b111e;
 }
 
 blockquote {
     font-size: 1.8rem;
     font-style: italic;
-    color: #5D4037;
+    color: black;
     margin: 1.5rem 0;
     padding: 1.5rem;
     background-color: rgba(255, 213, 79, 0.1);
     border-radius: 8px;
-    border-left: 5px solid #D32F2F;
+    border-left: 5px solid #9b111e;
 }
 
 .quote-author {
-    color: #795548;
+    color: #9b111e;
     font-weight: 600;
     margin-bottom: 1.5rem;
 }
 
 .quote-btn {
-    background-color: #5D4037;
+    background-color: #9b111e;
     color: white;
     border: none;
     padding: 0.8rem 1.8rem;
@@ -412,9 +412,9 @@ blockquote {
 .timeline-section h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: #5D4037;
+    color: #9b111e;
     text-align: center;
-    border-bottom: 2px solid #D32F2F;
+    border-bottom: 2px solid #9b111e;
     padding-bottom: 0.5rem;
 }
 
@@ -437,14 +437,14 @@ blockquote {
     left: 0;
     right: 0;
     height: 4px;
-    background-color: #D32F2F;
+    background-color: #e0b23b;
     transform: translateY(-50%);
     z-index: 1;
 }
 
 .timeline-item {
-    background-color: #FFD54F;
-    color: #5D4037;
+    background-color: #e0b23b;
+    color: black;
     padding: 1rem;
     border-radius: 8px;
     width: 180px;
@@ -464,20 +464,22 @@ blockquote {
     font-weight: 700;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-    color: #D32F2F;
+    color: #9b111e;
 }
 
 /* Footer */
 .footer {
-    background-color: #5D4037;
-    color: #FFD54F;
-    text-align: center;
+    background-color: #eeba2b;
+    color: #a44a3f;
+    text-align: left;
     padding: 2rem;
     margin-top: 3rem;
 }
 
-.footer p {
+.footer p, .footer h3 {
     margin: 0.5rem 0;
+    padding-left: 2rem;
+    text-indent: -2rem;
 }
 
 /* Responsive Design */

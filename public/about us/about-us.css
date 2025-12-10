@@ -247,40 +247,16 @@ body {
     transform: scale(1.03);
 }
 
-/* Mission Section */
-.mission-section {
-    background-color: white;
-    padding: 3rem;
-    border-radius: 10px;
-    margin-top: 4rem;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    text-align: center;
-}
-
-.mission-section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-    color: #5D4037;
-}
-
-.mission-section p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #795548;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
 /* Footer */
 .footer {
-    background-color: #5D4037;
-    color: #FFD54F;
+    background-color: #eeba2b;
+    color: #a44a3f;
     text-align: center;
     padding: 2rem;
     margin-top: 3rem;
 }
 
-.footer p {
+.footer p, .footer h3 {
     margin: 0.5rem 0;
 }
 
