@@ -173,14 +173,17 @@ body {
 
 /*last*/
 .footer {
-    background-color: #eeba2b; /* Yellow background */
-    color: #a44a3f; /* Brown font color */
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transform: translate(-50%, 50%);
+    background-color: #eeba2b;
+    color: #a44a3f;
+    text-align: left;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.footer p, .footer h3 {
+    margin: 0.5rem 0;
+    padding-left: 2rem;
+    text-indent: -2rem;
 }
 
 .float-img {

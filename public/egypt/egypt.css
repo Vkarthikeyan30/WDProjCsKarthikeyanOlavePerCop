@@ -258,7 +258,7 @@ body {
 
 .dynasties h4 {
     margin-bottom: 1rem;
-    color: #5D4037;
+    color: #c9a227;
 }
 
 .dynasty-tags {
@@ -269,7 +269,7 @@ body {
 
 .dynasty-tag {
     background-color: #FFD54F;
-    color: #5D4037;
+    color: black;
     padding: 0.5rem 1rem;
     border-radius: 30px;
     font-weight: 600;
@@ -278,7 +278,7 @@ body {
 }
 
 .dynasty-tag:hover {
-    background-color: #D32F2F;
+    background-color: #325d79;
     color: white;
     transform: translateY(-3px);
 }
@@ -296,8 +296,8 @@ body {
 .governance-box h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: #5D4037;
-    border-bottom: 2px solid #D32F2F;
+    color: #FFD54F;
+    border-bottom: 2px solid #FFD54F;
     padding-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -305,13 +305,13 @@ body {
 }
 
 .governance-box h3 i {
-    color: #D32F2F;
+    color: #FFD54F;
 }
 
 .governance-box p {
     margin-bottom: 1.5rem;
     line-height: 1.7;
-    color: #5D4037;
+    color: black;
 }
 
 .governance-details {
@@ -326,11 +326,11 @@ body {
     background-color: rgba(255, 213, 79, 0.2);
     padding: 1.2rem;
     border-radius: 8px;
-    border-left: 4px solid #D32F2F;
+    border-left: 4px solid #FFD54F;
 }
 
 .governance-item h4 {
-    color: #D32F2F;
+    color: #FFD54F;
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -351,8 +351,8 @@ body {
 .quote-box h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: #5D4037;
-    border-bottom: 2px solid #D32F2F;
+    color: black;
+    border-bottom: 2px solid #FFD54F;
     padding-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -361,28 +361,28 @@ body {
 }
 
 .quote-box h3 i {
-    color: #D32F2F;
+    color: #FFD54F;
 }
 
 blockquote {
     font-size: 1.8rem;
     font-style: italic;
-    color: #5D4037;
+    color: black;
     margin: 1.5rem 0;
     padding: 1.5rem;
     background-color: rgba(255, 213, 79, 0.1);
     border-radius: 8px;
-    border-left: 5px solid #D32F2F;
+    border-left: 5px solid #FFD54F;
 }
 
 .quote-author {
-    color: #795548;
+    color: #FFD54F;
     font-weight: 600;
     margin-bottom: 1.5rem;
 }
 
 .quote-btn {
-    background-color: #5D4037;
+    background-color: #FFD54F;
     color: white;
     border: none;
     padding: 0.8rem 1.8rem;
@@ -394,7 +394,7 @@ blockquote {
 }
 
 .quote-btn:hover {
-    background-color: #D32F2F;
+    background-color: #FFD54F;
     transform: translateY(-3px);
 }
 
@@ -412,9 +412,9 @@ blockquote {
 .timeline-section h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: #5D4037;
+    color: #FFD54F;
     text-align: center;
-    border-bottom: 2px solid #D32F2F;
+    border-bottom: 2px solid #FFD54F;
     padding-bottom: 0.5rem;
 }
 
@@ -437,14 +437,14 @@ blockquote {
     left: 0;
     right: 0;
     height: 4px;
-    background-color: #D32F2F;
+    background-color: #325d79;
     transform: translateY(-50%);
     z-index: 1;
 }
 
 .timeline-item {
-    background-color: #FFD54F;
-    color: #5D4037;
+    background-color: #325d79;
+    color: white;
     padding: 1rem;
     border-radius: 8px;
     width: 180px;
@@ -464,7 +464,7 @@ blockquote {
     font-weight: 700;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-    color: #D32F2F;
+    color: #FFD54F;
 }
 
 /* Footer */
@@ -552,7 +552,7 @@ blockquote {
 }
 
 .game-section h2 i {
-    color: #D32F2F;
+    color: #c9a227;
 }
 
 .game-intro {
@@ -582,9 +582,9 @@ blockquote {
 
 #gameTitle {
     font-size: 1.8rem;
-    color: #D32F2F;
+    color: #c9a227;
     margin-bottom: 1rem;
-    border-bottom: 2px solid #FFD54F;
+    border-bottom: 2px solid #325d79;
     padding-bottom: 0.5rem;
 }
 
@@ -611,11 +611,11 @@ blockquote {
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    border-left: 5px solid #D32F2F;
+    border-left: 5px solid #c9a227;
 }
 
 .option-btn:hover {
-    background-color: #D32F2F;
+    background-color: #c9a227;
     transform: translateX(10px);
     box-shadow: 0 5px 15px rgba(211, 47, 47, 0.3);
 }
@@ -623,7 +623,7 @@ blockquote {
 .game-ending {
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 2px solid #FFD54F;
+    border-top: 2px solid #325d79;
 }
 
 .hidden {
@@ -632,7 +632,7 @@ blockquote {
 
 #endingTitle {
     font-size: 2rem;
-    color: #D32F2F;
+    color: #c9a227;
     margin-bottom: 1rem;
 }
 
@@ -666,7 +666,7 @@ blockquote {
 }
 
 .restart-btn {
-    background-color: #D32F2F;
+    background-color: #c9a227;
     color: white;
     border: none;
     padding: 1rem 2.5rem;
@@ -721,14 +721,14 @@ blockquote {
 
 .stat-value {
     font-weight: 700;
-    color: #D32F2F;
+    color: #c9a227;
 }
 
 .game-hint {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 1rem;
     border-radius: 6px;
-    border-left: 4px solid #FFD54F;
+    border-left: 4px solid #c9a227;
 }
 
 .game-hint p {
@@ -738,7 +738,7 @@ blockquote {
 }
 
 .game-hint i {
-    color: #FFD54F;
+    color: #c9a227;
     margin-right: 0.5rem;
 }
 
