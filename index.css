@@ -78,7 +78,7 @@ body {
 
 .banner-content {
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -108,7 +108,7 @@ body {
 
 .banner-image img {
     width: 100%;
-    height: 100%;
+    height: 67%;
     object-fit: cover;
     filter: brightness(0.9);
 }
@@ -116,7 +116,7 @@ body {
 /*main info 1*/
 .main-content {
     position: absolute;
-    top: 155%;
+    top: 105%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -140,9 +140,9 @@ body {
 /*playtutorial*/
 .main2-content {
     position: absolute;
-    top: 89%;
-    left: 80%;
-    transform: translate(-100%, -50%);
+    top: 85%;
+    left: 76%;
+    transform: translate(-80%, -110%);
     text-align: center;
     background-color: rgba(255, 255, 255, 0.85);
     padding: 2rem 3rem;
@@ -164,11 +164,11 @@ body {
 /*picture*/
 
 .mainfo3 img {
-    width: 35%;
-    height: 90%;
+    width: 25%;
+    height: 15%;
     border-radius: 5px;
     filter: brightness(0.9);
-    transform: translate(65%, -50%);
+    transform: translate(120%, -70%);
 }
 
 /*last*/
