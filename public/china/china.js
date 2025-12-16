@@ -112,10 +112,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Generate a new random Chinese quote
+let lastRandomIndex = -1; // Initialize with an invalid index
+
 function generateNewQuote() {
-    const randomIndex = Math.floor(Math.random() * chineseQuotes.length);
+    let randomIndex;
+
+    // Ensure the new random index is different from the last one
+    do {
+        randomIndex = Math.floor(Math.random() * chineseQuotes.length);
+    } while (randomIndex === lastRandomIndex);
+
+    lastRandomIndex = randomIndex; // Update the last random index
     const randomQuote = chineseQuotes[randomIndex];
-    
+
     chineseQuote.textContent = `"${randomQuote.text}"`;
     document.querySelector('.quote-author').textContent = `— ${randomQuote.author}`;
     
@@ -125,14 +134,6 @@ function generateNewQuote() {
         chineseQuote.style.opacity = '1';
         chineseQuote.style.transition = 'opacity 0.5s ease';
     }, 10);
-}
-
-// Show dynasty information when tag is clicked
-function showDynastyInfo(dynasty) {
-    if (dynastyInfo[dynasty]) {
-        const info = dynastyInfo[dynasty];
-        alert(`${info.name} (${info.period})\n\n${info.info}`);
-    }
 }
 
 // Add hover effect to governance items
