@@ -141,8 +141,8 @@ body {
 .main2-content {
     position: absolute;
     top: 85%;
-    left: 76%;
-    transform: translate(-80%, -110%);
+    left: 60%;
+    transform: translate(-40%, -120%);
     text-align: center;
     background-color: rgba(255, 255, 255, 0.85);
     padding: 2rem 3rem;
@@ -164,11 +164,11 @@ body {
 /*picture*/
 
 .mainfo3 img {
-    width: 25%;
+    width: 20%;
     height: 15%;
     border-radius: 5px;
     filter: brightness(0.9);
-    transform: translate(120%, -70%);
+    transform: translate(110%, -110%);
 }
 
 /*last*/
