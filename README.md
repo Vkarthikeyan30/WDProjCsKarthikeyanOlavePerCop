@@ -12,11 +12,14 @@ The webpage follows a **life simulation** format, inspired by storytelling game 
 3. Ancient Egypt Page: The webpage for Egypt will feature their old traditions like mummification, ancient artifacts, pyramids and tombs of ancient Egyptian rulers.  
 4. Ancient China Page: The webpage for China will include past Chinese dynasties, housing and architecture, agriculture, philosophers, and scholars.  
 5. Mesopotamia Page: The webage for Mesopotamia will feature its earliest empires, contributions in mathematics, and their breakthroughs in government and law.
+6. Civilization Selection, Player Info, and Life Simulation Page:
+7. Results Page: 
+8. Historical Context and Relevance Page: 
 
 
 
 ### JavaScript Integration
 We will use JavaScript so that the users can select the civilizations they want to explore, for decision-based branching, and for progress tracking to allow users to undergo through a personalised gaming experience. **These can be found in the Ancient Egypt, Ancient China, and Mesopotamia pages of the website.** Also, we plan to use JavaScript for an interactive story progression that allow users to scroll, click, or make decisions which dynamically change the content on-screen. For instance, as users progress through different life stages in Ancient Egypt, Mesopotamia, or China, we will be able to incorporate scene transitions, animations, and sound effects that mirror their environment. This makes the webpage feel alive and responsive rather than static. 
 
-### Wireframes & Favicon
-The wireframes can be accessed through this [canva link](https://www.canva.com/design/DAG3LPkhbSI/j_Vml09AuZj0700VvMv_iQ/edit?utm_content=DAG3LPkhbSI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton). Furthermore, our proposed favicon can also be accessed through this [canva link](https://www.canva.com/design/DAG3LFj5JP8/8dd1DNcD1ukKAbYiWUgX1w/edit?utm_content=DAG3LFj5JP8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton). Please use your PSHS Email Address to view these.
+### Wireframes of ALL 8 Webpages
+The wireframes can be accessed through this [canva link](https://www.canva.com/design/DAG3LPkhbSI/j_Vml09AuZj0700VvMv_iQ/edit?utm_content=DAG3LPkhbSI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
