@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -113,62 +114,110 @@ body {
     filter: brightness(0.9);
 }
 
-/*main info 1*/
+/* Main Content */
 .main-content {
-    position: absolute;
-    top: 105%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.content-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    align-items: flex-start; /* Ensures columns align properly */
+    flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
+}
+
+/* Left Column */
+.left-column {
+    flex: 1;
+    min-width: 300px; /* Ensures a minimum width for smaller screens */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Right Column */
+.right-column {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-width: 300px; /* Ensures a minimum width for smaller screens */
+}
+
+/* Website Rationale */
+.website-rationale {
     background-color: rgba(255, 255, 255, 0.85);
-    padding: 2rem 3rem;
     border-radius: 10px;
-    z-index: 10;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.main-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: #5D4037;
+.website-rationale h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #9b111e;
+    border-bottom: 2px solid #9b111e;
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.main-content p {
-    font-size: 1.2rem;
-    color: #795548;
+.website-rationale h3 i {
+    color: #9b111e;
 }
-/*playtutorial*/
-.main2-content {
-    position: absolute;
-    top: 85%;
-    left: 60%;
-    transform: translate(-40%, -120%);
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 2rem 3rem;
+
+.website-rationale p {
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    color: black;
+}
+
+/* How to Play */
+.how-to-play {
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    z-index: 10;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.main2-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: #5D4037;
+.how-to-play h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #9b111e;
+    border-bottom: 2px solid #9b111e;
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.main2-content p {
-    font-size: 1.2rem;
-    color: #795548;
+.how-to-play h3 i {
+    color: #9b111e;
 }
-/*picture*/
 
-.mainfo3 img {
-    width: 20%;
-    height: 15%;
-    border-radius: 5px;
-    filter: brightness(0.9);
-    transform: translate(110%, -110%);
+.how-to-play p {
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    color: black;
+}
+
+/* Ensure Columns are Side-by-Side */
+.content-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    align-items: flex-start; /* Ensures columns align properly */
+    flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
 }
 
 /*last*/
