@@ -154,9 +154,13 @@ body {
     padding: 2rem;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     height: 100%;
+    width: 40%;
     -webkit-backdrop-filter: blur(10px); /* For Safari */
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    top: 50%;
+    left: 45%;
+    transform: translate(20%, -70%);
 }
 
 .website-rationale h3 {
@@ -188,7 +192,13 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    height: 100%;
+    width: 46%;
+    top: 50%;
+    left: 45%;
+    transform: translate(108%, -170%);
 }
+
 
 .how-to-play h3 {
     font-size: 1.8rem;
