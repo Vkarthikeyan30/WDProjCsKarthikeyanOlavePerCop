@@ -1,3 +1,4 @@
+/* ========== BASE STYLES (adapted from china.css) ========== */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +14,7 @@ body {
 /* Navigation Bar */
 .navbar {
     background-color: #eeba2b;
-    color: #a44a3f; 
+    color: #a44a3f;
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
@@ -62,7 +63,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #607b8b; /* Blue font on hover */
+    color: #607b8b;
     background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -71,473 +72,99 @@ body {
     border-bottom: 3px solid #5D4037;
 }
 
-/* Banner Section */
-.banner {
-    position: relative;
-    margin-bottom: 3rem;
-    height: 500px;
-}
-
-.banner-image {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.banner-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.8);
-}
-
-.banner-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* Simulator Banner */
+.simulator-banner {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://tse1.mm.bing.net/th/id/OIP.wT9tK0iAr7DOZdQUFJEfmgHaD7?rs=1&pid=ImgDetMain&o=7&rm=3') center/cover no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: white;
-    z-index: 5;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 3rem;
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
-    max-width: 800px;
-    width: 90%;
-}
-
-.banner-overlay h2 {
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
-    color: #fff;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.banner-overlay p {
-    font-size: 1.5rem;
     margin-bottom: 2rem;
-    color: white;
 }
 
-.explore-btn {
-    background-color: #49759c; /* Gold replaced */
-    color: white;
-    border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+.simulator-banner h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
-.explore-btn:hover {
-    background-color: #6b705c; /* Blue replaced */
-    color: white;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+.simulator-banner p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 1rem auto 0;
 }
 
-/* Main Content */
+/* Main container */
 .main-content {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem 4rem;
 }
 
-.content-container {
+/* Civilization Picker Cards */
+.civ-picker {
     display: flex;
-    gap: 2rem;
-    margin-bottom: 4rem;
-}
-
-/* Left Column - Traditions */
-.left-column {
-    flex: 1;
-}
-
-.traditions-box {
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    height: 100%;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.traditions-box h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #49759c;
-    border-bottom: 2px solid #49759c;
-    padding-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.traditions-box h3 i {
-    color: #49759c;
-}
-
-.traditions-list {
-    list-style-type: none;
-}
-
-.traditions-list li {
-    margin-bottom: 1.8rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(93, 64, 55, 0.1);
-}
-
-.traditions-list li:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-.traditions-list h4 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: #49759c;
-}
-
-.traditions-list p {
-    color: black;
-    line-height: 1.6;
-}
-
-/* Right Column */
-.right-column {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* Overview Box */
-.overview-box {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.overview-box h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #49759c;
-    border-bottom: 2px solid #49759c;
-    padding-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.overview-box h3 i {
-    color: #49759c;
-}
-
-.overview-box p {
-    margin-bottom: 1.2rem;
-    line-height: 1.7;
-    color: black;
-}
-
-.dynasties {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(93, 64, 55, 0.1);
-}
-
-.dynasties h4 {
-    margin-bottom: 1rem;
-    color: #49759c;
-}
-
-.dynasty-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-}
-
-.dynasty-tag {
-    background-color: #49759c;
-    color: black;
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.dynasty-tag:hover {
-    background-color: #6b705c;
-    color: white;
-    transform: translateY(-3px);
-}
-
-/* Governance Box */
-.governance-box {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.governance-box h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #49759c;
-    border-bottom: 2px solid #49759c;
-    padding-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.governance-box h3 i {
-    color: #49759c;
-}
-
-.governance-box p {
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
-    color: black;
-}
-
-.governance-details {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.governance-item {
-    flex: 1;
-    min-width: 200px;
-    background-color: rgba(255, 213, 79, 0.2);
-    padding: 1.2rem;
-    border-radius: 8px;
-    border-left: 4px solid #49759c;
-}
-
-.governance-item h4 {
-    color: #49759c;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* Quote Box */
-.quote-box {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    text-align: center;
-}
-
-.quote-box h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: black;
-    border-bottom: 2px solid #49759c;
-    padding-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 2rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
 }
 
-.quote-box h3 i {
-    color: #49759c;
-}
-
-blockquote {
-    font-size: 1.8rem;
-    font-style: italic;
-    color: black;
-    margin: 1.5rem 0;
-    padding: 1.5rem;
-    background-color: rgba(255, 213, 79, 0.1);
-    border-radius: 8px;
-    border-left: 5px solid #49759c;
-}
-
-.quote-author {
-    color: #49759c;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
-
-.quote-btn {
-    background-color: #49759c;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.8rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 30px;
+.civ-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    padding: 2rem 1.5rem;
+    width: 250px;
+    text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
-.quote-btn:hover {
-    background-color: #49759c;
-    transform: translateY(-3px);
-}
-
-/* Timeline Section */
-.timeline-section {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    margin-top: 2rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.timeline-section h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #49759c;
-    text-align: center;
-    border-bottom: 2px solid #49759c;
-    padding-bottom: 0.5rem;
-}
-
-.timeline-container {
-    overflow-x: auto;
-    padding: 1rem 0;
-}
-
-.timeline {
-    display: flex;
-    min-width: 1000px;
-    justify-content: space-between;
-    position: relative;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background-color: #6b705c;
-    transform: translateY(-50%);
-    z-index: 1;
-}
-
-.timeline-item {
-    background-color: #6b705c;
-    color: white;
-    padding: 1rem;
-    border-radius: 8px;
-    width: 180px;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.timeline-item:hover {
+.civ-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border-color: #9b111e;
 }
 
-.timeline-year {
-    font-weight: 700;
-    font-size: 1.1rem;
+.civ-card.selected {
+    border-color: #9b111e;
+    background-color: #fff5f0;
+}
+
+.civ-icon {
+    font-size: 4rem;
+    color: #9b111e;
+    margin-bottom: 1rem;
+}
+
+.civ-card h3 {
+    font-size: 1.8rem;
+    color: #5D4037;
     margin-bottom: 0.5rem;
-    color: white;
 }
 
-/* Footer */
-.footer {
-    background-color: #eeba2b;
-    color: #a44a3f;
-    text-align: left;
-    padding: 2rem;
-    margin-top: 3rem;
+.civ-card p {
+    color: #795548;
+    font-style: italic;
 }
 
-.footer p, .footer h3 {
-    margin: 0.5rem 0;
-    padding-left: 2rem;
-    text-indent: -2rem;
-}
-
-/* Responsive Design */
-@media (max-width: 1100px) {
-    .content-container {
-        flex-direction: column;
-    }
-    
-    .right-column {
-        gap: 1.5rem;
-    }
-    
-    .governance-details {
-        flex-direction: column;
-    }
-    
-    .governance-item {
-        min-width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .nav-links {
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .banner-overlay h2 {
-        font-size: 2.5rem;
-    }
-    
-    .banner-overlay p {
-        font-size: 1.2rem;
-    }
-    
-    .banner {
-        height: 400px;
-    }
-    
-    blockquote {
-        font-size: 1.4rem;
-    }
-}
-/* Game Section Styles */
+/* Game Section (same as china.css but with minor adjustments) */
 .game-section {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     padding: 2.5rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    display: none; /* hidden by default */
+}
+
+.game-section.visible {
+    display: block;
 }
 
 .game-section h2 {
@@ -552,7 +179,7 @@ blockquote {
 }
 
 .game-section h2 i {
-    color: #49759c;
+    color: #D32F2F;
 }
 
 .game-intro {
@@ -582,9 +209,9 @@ blockquote {
 
 #gameTitle {
     font-size: 1.8rem;
-    color: #49759c;
+    color: #D32F2F;
     margin-bottom: 1rem;
-    border-bottom: 2px solid #6b705c;
+    border-bottom: 2px solid #FFD54F;
     padding-bottom: 0.5rem;
 }
 
@@ -611,11 +238,11 @@ blockquote {
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    border-left: 5px solid #49759c;
+    border-left: 5px solid #D32F2F;
 }
 
 .option-btn:hover {
-    background-color: #49759c;
+    background-color: #D32F2F;
     transform: translateX(10px);
     box-shadow: 0 5px 15px rgba(211, 47, 47, 0.3);
 }
@@ -623,7 +250,7 @@ blockquote {
 .game-ending {
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 2px solid #6b705c;
+    border-top: 2px solid #FFD54F;
 }
 
 .hidden {
@@ -632,7 +259,7 @@ blockquote {
 
 #endingTitle {
     font-size: 2rem;
-    color: #49759c;
+    color: #D32F2F;
     margin-bottom: 1rem;
 }
 
@@ -666,7 +293,7 @@ blockquote {
 }
 
 .restart-btn {
-    background-color: #49759c;
+    background-color: #D32F2F;
     color: white;
     border: none;
     padding: 1rem 2.5rem;
@@ -721,14 +348,14 @@ blockquote {
 
 .stat-value {
     font-weight: 700;
-    color: #49759c;
+    color: #D32F2F;
 }
 
 .game-hint {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 1rem;
     border-radius: 6px;
-    border-left: 4px solid #49759c;
+    border-left: 4px solid #FFD54F;
 }
 
 .game-hint p {
@@ -738,43 +365,38 @@ blockquote {
 }
 
 .game-hint i {
-    color: #49759c;
+    color: #FFD54F;
     margin-right: 0.5rem;
 }
 
-.game-sources {
-    background-color: rgba(93, 64, 55, 0.05);
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin-top: 2rem;
+/* Footer */
+.footer {
+    background-color: #eeba2b;
+    color: #a44a3f;
+    text-align: left;
+    padding: 2rem;
+    margin-top: 3rem;
 }
 
-.game-sources h4 {
-    color: #5D4037;
-    margin-bottom: 1rem;
+.footer p, .footer h3 {
+    margin: 0.5rem 0;
+    padding-left: 2rem;
+    text-indent: -2rem;
 }
 
-.game-sources p {
-    color: #795548;
-    margin-bottom: 0.8rem;
-}
-
-.game-sources ul {
-    color: #795548;
-    padding-left: 1.5rem;
-}
-
-.game-sources li {
-    margin-bottom: 0.5rem;
-}
-
-/* Responsive adjustments for game */
+/* Responsive */
 @media (max-width: 900px) {
     .game-content {
         flex-direction: column;
     }
-    
     .game-stats {
         order: -1;
+    }
+    .civ-picker {
+        gap: 1rem;
+    }
+    .civ-card {
+        width: 200px;
+        padding: 1.5rem 1rem;
     }
 }
