@@ -1,4 +1,4 @@
-// ==================== GAME DATA FOR ALL CIVILIZATIONS ====================
+// ==================== GAME DATA (same as before, omitted for brevity) ====================
 const civData = {
     china: {
         name: "China",
@@ -314,10 +314,18 @@ const civData = {
     }
 };
 
-// ==================== GLOBAL VARIABLES ====================
-let currentCiv = null; // Will be set when user picks a civilization
 
-// DOM Elements
+// ==================== GLOBAL VARIABLES ====================
+let currentCiv = null;
+let currentIndex = 0; // 0: China, 1: Egypt, 2: Mesopotamia
+const civOrder = ['china', 'egypt', 'mesopotamia'];
+const bannerElement = document.getElementById('simulatorBanner');
+const carouselTrack = document.getElementById('carouselTrack');
+const cards = document.querySelectorAll('.carousel-card');
+const prevBtn = document.getElementById('prevCiv');
+const nextBtn = document.getElementById('nextCiv');
+
+// DOM Elements for game (same as before)
 const gameSection = document.getElementById('destinyGame');
 const civGameTitle = document.getElementById('civGameTitle');
 const gameIntro = document.getElementById('gameIntro');
@@ -334,7 +342,46 @@ const currentDynastyEl = document.getElementById('currentDynasty');
 const currentStatusEl = document.getElementById('currentStatus');
 const choiceCountEl = document.getElementById('choiceCount');
 
-// ==================== HELPER FUNCTIONS ====================
+// ==================== CAROUSEL FUNCTIONS ====================
+function updateCarousel(index) {
+    // Calculate transform offset
+    const cardWidth = cards[0].offsetWidth + 20; // width + margin (10px each side = 20)
+    const trackWidth = carouselTrack.offsetWidth;
+    const containerWidth = document.querySelector('.carousel-track-container').offsetWidth;
+    // Center the selected card
+    const offset = (containerWidth / 2) - (cardWidth / 2) - (index * cardWidth);
+    carouselTrack.style.transform = `translateX(${offset}px)`;
+    
+    // Update selected class
+    cards.forEach((card, i) => {
+        if (i === index) {
+            card.classList.add('selected');
+        } else {
+            card.classList.remove('selected');
+        }
+    });
+    
+    // Update banner background
+    const selectedCard = cards[index];
+    const bgUrl = selectedCard.dataset.bg;
+    bannerElement.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${bgUrl}')`;
+    
+    // Update current civilization and initialize game
+    const civKey = selectedCard.dataset.civ;
+    initGame(civKey);
+}
+
+function nextCiv() {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateCarousel(currentIndex);
+}
+
+function prevCiv() {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    updateCarousel(currentIndex);
+}
+
+// ==================== GAME FUNCTIONS (same as before) ====================
 function updateGameStats() {
     if (!currentCiv) return;
     const state = civData[currentCiv].gameState;
@@ -344,7 +391,6 @@ function updateGameStats() {
     choiceCountEl.textContent = state.choicesMade;
 }
 
-// Load a scene for the current civilization
 function loadScene(sceneId) {
     if (!currentCiv) return;
     const civ = civData[currentCiv];
@@ -358,16 +404,12 @@ function loadScene(sceneId) {
     gameTitleEl.textContent = scene.title;
     gameDescriptionEl.textContent = scene.description;
     
-    // If this scene has an ending
     if (scene.ending) {
         showEnding(scene.ending, scene.endingType);
         return;
     }
     
-    // Clear previous options
     gameOptionsEl.innerHTML = '';
-    
-    // Create new options
     scene.options.forEach((option, index) => {
         const optionBtn = document.createElement('button');
         optionBtn.className = 'option-btn';
@@ -377,7 +419,6 @@ function loadScene(sceneId) {
     });
 }
 
-// Handle player choice
 function chooseOption(option) {
     if (!currentCiv) return;
     const civ = civData[currentCiv];
@@ -389,20 +430,17 @@ function chooseOption(option) {
     
     updateGameStats();
     
-    // Add visual feedback
     const buttons = document.querySelectorAll('.option-btn');
     buttons.forEach(btn => {
         btn.style.pointerEvents = 'none';
         btn.style.opacity = '0.7';
     });
     
-    // Load next scene after a brief delay
     setTimeout(() => {
         loadScene(option.nextScene);
     }, 800);
 }
 
-// Show ending
 function showEnding(endingId, endingType) {
     if (!currentCiv) return;
     const civ = civData[currentCiv];
@@ -413,21 +451,17 @@ function showEnding(endingId, endingType) {
         return;
     }
     
-    // Update ending display
     endingTitleEl.textContent = ending.title;
     endingDescriptionEl.textContent = ending.description;
     
-    // Update historical context
     historicalContextEl.innerHTML = `
         <h4>${ending.historicalContext.title}</h4>
         <p>${ending.historicalContext.text}</p>
     `;
     
-    // Show ending, hide options
     gameEndingEl.classList.remove('hidden');
     gameOptionsEl.classList.add('hidden');
     
-    // Change background color based on ending type
     const endingColor = endingType === 'good' ? 'rgba(76, 175, 80, 0.1)' : 
                       endingType === 'bad' ? 'rgba(244, 67, 54, 0.1)' : 
                       'rgba(255, 193, 7, 0.1)';
@@ -436,12 +470,10 @@ function showEnding(endingId, endingType) {
     civ.gameState.gameEnded = true;
 }
 
-// Initialize game for the selected civilization
 function initGame(civKey) {
     currentCiv = civKey;
     const civ = civData[civKey];
     
-    // Reset game state to default for this civ
     civ.gameState = {
         currentScene: "start",
         choicesMade: 0,
@@ -453,31 +485,32 @@ function initGame(civKey) {
     updateGameStats();
     loadScene("start");
     
-    // Show game section, hide ending
     gameSection.classList.add('visible');
     gameEndingEl.classList.add('hidden');
     gameOptionsEl.classList.remove('hidden');
     
-    // Update header
     civGameTitle.textContent = `Your Journey: ${civ.name}`;
     gameIntro.textContent = `Experience life in ancient ${civ.name} through this interactive story.`;
 }
 
 // ==================== EVENT LISTENERS ====================
 document.addEventListener('DOMContentLoaded', function() {
-    // Civilization picker
-    const civCards = document.querySelectorAll('.civ-card');
-    civCards.forEach(card => {
-        card.addEventListener('click', function() {
-            // Remove selected class from all cards
-            civCards.forEach(c => c.classList.remove('selected'));
-            // Add selected to clicked card
-            this.classList.add('selected');
-            
-            const civKey = this.dataset.civ;
-            initGame(civKey);
+    // Carousel navigation
+    prevBtn.addEventListener('click', prevCiv);
+    nextBtn.addEventListener('click', nextCiv);
+    
+    // Card click also selects
+    cards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel(currentIndex);
         });
     });
+    
+    // Initialize with first civilization (China) on page load
+    setTimeout(() => {
+        updateCarousel(0); // Auto-select first
+    }, 100);
     
     // Restart button
     restartBtn.addEventListener('click', function() {
@@ -486,14 +519,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Add animation to option selection (global click)
+    // Option button animations
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('option-btn')) {
-            // Add click effect
             e.target.style.transform = 'scale(0.98)';
             e.target.style.backgroundColor = '#5D4037';
             
-            // Reset other buttons
             const allButtons = document.querySelectorAll('.option-btn');
             allButtons.forEach(btn => {
                 if (btn !== e.target) {

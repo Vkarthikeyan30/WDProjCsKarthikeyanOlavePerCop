@@ -400,3 +400,119 @@ body {
         padding: 1.5rem 1rem;
     }
 }
+
+/* ========== CAROUSEL STYLES ========== */
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0 3rem;
+    padding: 0 40px;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+}
+
+.carousel-track {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-card {
+    flex: 0 0 300px; /* Fixed width for each card */
+    margin: 0 10px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.carousel-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.carousel-card.selected {
+    border-color: #9b111e;
+    background-color: #fff5f0;
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(155, 17, 30, 0.2);
+}
+
+.carousel-btn {
+    background-color: #9b111e;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: #e0b23b;
+    transform: scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+/* Banner background update */
+.simulator-banner {
+    transition: background-image 0.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.simulator-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* dark overlay for readability */
+}
+
+.simulator-banner > div {
+    position: relative;
+    z-index: 2;
+}
+
+/* Remove old civ-picker styles if any */
+.civ-picker {
+    display: none; /* Hide old selector */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-card {
+        flex: 0 0 250px;
+        padding: 1.5rem 1rem;
+    }
+    .carousel-container {
+        padding: 0 20px;
+    }
+}
+
