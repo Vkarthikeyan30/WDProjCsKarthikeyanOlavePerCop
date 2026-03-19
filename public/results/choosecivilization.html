@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Clay and the Crown - Life Simulator</title>
     <link rel="icon" type="image" href="../../media/CS3 Project Favicon (1).png">
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- External CSS -->
     <link rel="stylesheet" href="choosecivilization.css">
@@ -17,7 +18,6 @@
             <div class="brand">
                 <h1 class="brand-name">The Clay and the Crown</h1>
             </div>
-            
             <div class="nav-links">
                 <a href="../../index.html" class="nav-link">Home</a>
                 <a href="../about us/about-us.html" class="nav-link">About Us</a>
@@ -29,54 +29,96 @@
         </div>
     </nav>
 
-    <!-- Banner with dynamic background -->
-    <section class="simulator-banner" id="simulatorBanner">
-        <div>
-            <h1>Life Simulator</h1>
-            <p id="bannerSubtitle">Choose a civilization and shape your destiny through real historical choices.</p>
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-image">
+            <!-- Neutral banner (changed from unsplash to the specified initial image) -->
+            <img src="https://miro.medium.com/v2/resize:fit:2000/0*1mEffXajVruXViwd" alt="Ancient Civilizations">
+            <figcaption>Historical Journey</figcaption>
+            <div class="banner-overlay">
+                <h2>Life Simulator</h2>
+                <p>Shape your destiny through real historical choices</p>
+            </div>
         </div>
     </section>
 
     <main class="main-content">
-        <!-- Civilization Carousel -->
-        <div class="carousel-container">
-            <button class="carousel-btn prev-btn" id="prevCiv"><i class="fas fa-chevron-left"></i></button>
-            <div class="carousel-track-container">
-                <ul class="carousel-track" id="carouselTrack">
-                    <li class="carousel-card" data-civ="china" data-bg="https://tse1.mm.bing.net/th/id/OIP.wT9tK0iAr7DOZdQUFJEfmgHaD7?rs=1&pid=ImgDetMain&o=7&rm=3">
-                        <i class="fas fa-dragon civ-icon"></i>
-                        <h3>China</h3>
-                        <p>Middle Kingdom</p>
-                    </li>
-                    <li class="carousel-card" data-civ="egypt" data-bg="https://images.unsplash.com/photo-1572252009286-268acec5ca0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
-                        <i class="fas fa-leaf civ-icon"></i>
-                        <h3>Egypt</h3>
-                        <p>Gift of the Nile</p>
-                    </li>
-                    <li class="carousel-card" data-civ="mesopotamia" data-bg="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
-                        <i class="fas fa-water civ-icon"></i>
-                        <h3>Mesopotamia</h3>
-                        <p>Land Between Rivers</p>
-                    </li>
-                </ul>
+        <!-- Sign-Up / Login Section -->
+        <div class="signup-section">
+            <h3><i class="fas fa-user-plus"></i> Sign In / Create Account</h3>
+
+            <!-- Tab Buttons -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="signupTab">Sign Up</button>
+                <button class="auth-tab" id="loginTab">Log In</button>
             </div>
-            <button class="carousel-btn next-btn" id="nextCiv"><i class="fas fa-chevron-right"></i></button>
+
+            <!-- Sign-Up Form -->
+            <form id="signupForm" class="auth-fields active">
+                <input type="email" id="signupEmail" placeholder="Email" required>
+                <input type="text" id="signupUsername" placeholder="Username" required>
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <select id="signupPronoun" required>
+                    <option value="" disabled selected>Select pronouns</option>
+                    <option value="he/him">he/him</option>
+                    <option value="she/her">she/her</option>
+                    <option value="they/them">they/them</option>
+                </select>
+                <button type="submit" class="auth-btn">Sign Up</button>
+            </form>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-fields">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit" class="auth-btn">Log In</button>
+            </form>
+
+            <div id="accountMessage" class="account-message"></div>
         </div>
 
-        <!-- Game Section -->
-        <section class="game-section" id="destinyGame">
+        <!-- Civilization Selection (disabled until signed in) -->
+        <div class="civ-selection" id="civSelection">
+            <h3>Choose Your Civilization</h3>
+            <form id="civForm" class="civ-form">
+                <div class="civ-options">
+                    <label class="civ-card" for="civ-china">
+                        <input type="radio" name="civilization" id="civ-china" value="china" disabled>
+                        <i class="fas fa-dragon civ-icon"></i>
+                        <h4>China</h4>
+                        <p>Middle Kingdom</p>
+                    </label>
+                    <label class="civ-card" for="civ-egypt">
+                        <input type="radio" name="civilization" id="civ-egypt" value="egypt" disabled>
+                        <i class="fas fa-leaf civ-icon"></i>
+                        <h4>Egypt</h4>
+                        <p>Gift of the Nile</p>
+                    </label>
+                    <label class="civ-card" for="civ-mesopotamia">
+                        <input type="radio" name="civilization" id="civ-mesopotamia" value="mesopotamia" disabled>
+                        <i class="fas fa-water civ-icon"></i>
+                        <h4>Mesopotamia</h4>
+                        <p>Land Between Rivers</p>
+                    </label>
+                </div>
+            </form>
+        </div>
+
+        <!-- Game Section (hidden until civilization selected) -->
+        <section class="game-section" id="destinyGame" style="display: none;">
             <div class="game-container">
                 <h2><i class="fas fa-crown"></i> <span id="civGameTitle">Your Journey Begins</span></h2>
-                <p class="game-intro" id="gameIntro">Select a civilization above to start your interactive story.</p>
+                <p class="game-intro" id="gameIntro">Select a civilization to start your interactive story.</p>
                 
                 <div class="game-content">
-                    <div class="game-text" id="gameText">
+                    <div class="game-text">
                         <h3 id="gameTitle">Awaiting Selection</h3>
                         <p id="gameDescription">Please choose a civilization to begin your historical adventure.</p>
                         
-                        <div class="game-options" id="gameOptions">
-                            <!-- Options will be populated by JavaScript -->
-                        </div>
+                        <form id="gameChoiceForm">
+                            <div class="game-options" id="gameOptions"></div>
+                            <button type="submit" id="makeChoiceBtn" class="choice-submit-btn" disabled>Make Choice</button>
+                        </form>
                         
                         <div class="game-ending hidden" id="gameEnding">
                             <h3 id="endingTitle"></h3>
@@ -89,37 +131,56 @@
                     <div class="game-stats">
                         <h4>Your Journey</h4>
                         <div class="stats-container">
-                            <div class="stat">
-                                <span class="stat-label">Civilization:</span>
-                                <span class="stat-value" id="currentCivDisplay">—</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-label">Dynasty/Period:</span>
-                                <span class="stat-value" id="currentDynasty">—</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-label">Status:</span>
-                                <span class="stat-value" id="currentStatus">—</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-label">Choices Made:</span>
-                                <span class="stat-value" id="choiceCount">0</span>
-                            </div>
+                            <div class="stat"><span class="stat-label">Civilization:</span> <span class="stat-value" id="currentCivDisplay">—</span></div>
+                            <div class="stat"><span class="stat-label">Dynasty/Period:</span> <span class="stat-value" id="currentDynasty">—</span></div>
+                            <div class="stat"><span class="stat-label">Status:</span> <span class="stat-value" id="currentStatus">—</span></div>
+                            <div class="stat"><span class="stat-label">Choices Made:</span> <span class="stat-value" id="choiceCount">0</span></div>
+                            <button id="resetGameBtn" class="form-btn reset-btn"><i class="fas fa-redo-alt"></i> Reset Game</button>
+                        </div>
+
+                        <!-- Player Info (from sign-up) -->
+                        <div class="player-info-panel">
+                            <h4><i class="fas fa-user"></i> Player</h4>
+                            <p><span class="stat-label">Username:</span> <span id="displayUsername">—</span></p>
+                            <p><span class="stat-label">Pronouns:</span> <span id="displayPronoun">—</span></p>
+                        </div>
+
+                        <!-- Save Progress Button -->
+                        <div class="save-panel">
+                            <button id="saveGameBtn" class="form-btn save-btn"><i class="fas fa-save"></i> Save Progress</button>
                         </div>
                         
                         <div class="game-hint">
-                            <p><i class="fas fa-lightbulb"></i> <strong>Hint:</strong> Each choice reflects real historical decisions. Your path changes with every pick.</p>
+                            <p><i class="fas fa-lightbulb"></i> <strong>Hint:</strong> Your game is auto-saved when you sign in. Use "Save Progress" to manual save.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <h3>&copy;Copyright 2025. The Clay and the Crown. All rights reserved.</h3>
-    </footer>
+        <!-- Comments Section -->
+        <section class="comments-section">
+            <h3><i class="fas fa-comments"></i> Share Your Experience</h3>
+
+            <!-- Form for new top-level comments -->
+            <div class="new-comment">
+                <form id="newCommentForm">
+                    <textarea id="newCommentText" rows="2" placeholder="Write your comment..." required></textarea>
+                    <button type="submit" class="form-btn"><i class="fas fa-paper-plane"></i> Post Comment</button>
+                </form>
+            </div>
+
+            <!-- Container where all comments and replies will be displayed -->
+            <div id="commentsList" class="comments-list"></div>
+        </section>
+
+    <!-- Footer with References -->
+        <footer class="footer">
+            <h3>&copy;Copyright 2025. The Clay and the Crown. All rights reserved.</h3>
+            <p>Edzard, O, D., Soden, Von, W. T., Frye, & N, R. (2025, December 8). History of Mesopotamia | Definition, civilization, Summary, agriculture, & Facts. Encyclopedia Britannica. https://www.britannica.com/place/Mesopotamia-historical-region-Asia</p>
+            <p>Kumar, K. (2014). International relations in Ancient Mesopotamia. Flame. https://www.academia.edu/9772812/International_Relations_in_Ancient_Mesopotamia</p>
+            <p>Tyldesley, & Joyce. (2025, November 8). Hatshepsut | Biography, reign, & Facts. Encyclopedia Britannica. https://www.britannica.com/biography/Hatshepsut</p>
+        </footer>
 
     <!-- External JavaScript -->
     <script src="choosecivilization.js"></script>

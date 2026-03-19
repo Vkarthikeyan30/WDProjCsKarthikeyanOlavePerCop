@@ -1,4 +1,3 @@
-/* ========== BASE STYLES (adapted from china.css) ========== */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +10,19 @@ body {
     color: black;
 }
 
-/* Navigation Bar */
+/* ===== THEME VARIABLES (neutral by default) ===== */
+:root {
+    --primary: #6c757d;
+    --primary-dark: #495057;
+    --secondary: #adb5bd;
+    --accent: #ced4da;
+    --bg-light: #f8f9fa;
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --border: #dee2e6;
+}
+
+/* ===== NAVBAR & FOOTER (unchanged) ===== */
 .navbar {
     background-color: #eeba2b;
     color: #a44a3f;
@@ -72,104 +83,265 @@ body {
     border-bottom: 3px solid #5D4037;
 }
 
-/* Simulator Banner */
-.simulator-banner {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://tse1.mm.bing.net/th/id/OIP.wT9tK0iAr7DOZdQUFJEfmgHaD7?rs=1&pid=ImgDetMain&o=7&rm=3') center/cover no-repeat;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.footer {
+    background-color: #eeba2b;
+    color: #a44a3f;
+    text-align: left;
+    padding: 2rem;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.footer p,
+.footer h3 {
+    margin: 0.5rem 0;
+    padding-left: 2rem;
+    text-indent: -2rem;
+}
+
+/* ===== BANNER ===== */
+.banner {
+    position: relative;
+    margin-bottom: 3rem;
+    height: 500px;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: opacity 0.5s ease; /* for fade animation */
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     color: white;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 3rem;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    max-width: 800px;
+    width: 90%;
+}
+
+.banner-overlay h2 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.banner-overlay p {
+    font-size: 1.5rem;
     margin-bottom: 2rem;
+    color: white;
 }
 
-.simulator-banner h1 {
-    font-size: 3rem;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-}
-
-.simulator-banner p {
-    font-size: 1.3rem;
-    max-width: 700px;
-    margin: 1rem auto 0;
-}
-
-/* Main container */
+/* ===== MAIN CONTENT ===== */
 .main-content {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem 4rem;
 }
 
-/* Civilization Picker Cards */
-.civ-picker {
+/* ----- Sign Up Section ----- */
+.signup-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(var(--primary-rgb), 0.3); /* fallback for browsers that don't support rgba with var? We'll use hex with opacity via separate variable if needed, but simpler: use border-color with opacity via separate custom property. */
+    border-color: color-mix(in srgb, var(--primary) 30%, transparent); /* modern browsers, but for compatibility we can keep a fixed border or use a separate variable */
+    /* For broad compatibility, we keep a neutral border and add a subtle tint later. Let's just use a light gray border. */
+    border: 1px solid #ddd;
+}
+
+.signup-section h3 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 0.5rem;
+}
+
+.auth-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.auth-tab {
+    padding: 10px 20px;
+    border: none;
+    background: #f0f0f0;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+.auth-tab.active {
+    background: var(--primary);
+    color: white;
+}
+.auth-fields {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+.auth-fields.active {
+    display: flex;
+}
+.auth-fields input,
+.auth-fields select,
+.auth-fields button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.auth-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.auth-btn:hover {
+    background: var(--primary-dark);
+}
+
+.account-message {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+}
+.account-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.account-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ----- Civilization Selection ----- */
+.civ-selection {
+    margin: 2rem 0 3rem;
+    text-align: center;
+}
+.civ-selection h3 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+.civ-options {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin: 3rem 0;
     flex-wrap: wrap;
 }
-
 .civ-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     padding: 2rem 1.5rem;
     width: 250px;
-    text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid transparent;
 }
-
 .civ-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    border-color: #9b111e;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border-color: var(--primary);
 }
-
-.civ-card.selected {
-    border-color: #9b111e;
-    background-color: #fff5f0;
+.civ-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
-
+.civ-card:has(input[type="radio"]:checked) {
+    border-color: var(--primary);
+    background-color: var(--bg-light);
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.2);
+}
 .civ-icon {
     font-size: 4rem;
-    color: #9b111e;
+    color: var(--primary);
     margin-bottom: 1rem;
+    transition: transform 0.3s ease;
 }
-
-.civ-card h3 {
+.civ-card:hover .civ-icon {
+    transform: rotate(5deg) scale(1.1);
+}
+.civ-card h4 {
     font-size: 1.8rem;
-    color: #5D4037;
+    color: var(--text-dark);
     margin-bottom: 0.5rem;
 }
-
 .civ-card p {
-    color: #795548;
+    color: var(--text-muted);
     font-style: italic;
 }
+.civ-card input[type="radio"]:disabled + .civ-icon {
+    opacity: 0.5;
+    color: #aaa;
+}
+.civ-card input[type="radio"]:disabled ~ h4,
+.civ-card input[type="radio"]:disabled ~ p {
+    opacity: 0.5;
+}
+.civ-card input[type="radio"]:disabled:hover {
+    transform: none;
+    border-color: transparent;
+}
 
-/* Game Section (same as china.css but with minor adjustments) */
+/* ----- Game Section ----- */
 .game-section {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     padding: 2.5rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    display: none; /* hidden by default */
+    display: none;
 }
-
 .game-section.visible {
     display: block;
 }
-
 .game-section h2 {
     font-size: 2.2rem;
-    color: #5D4037;
+    color: var(--primary);
     text-align: center;
     margin-bottom: 1rem;
     display: flex;
@@ -177,123 +349,140 @@ body {
     justify-content: center;
     gap: 15px;
 }
-
 .game-section h2 i {
-    color: #D32F2F;
+    color: var(--secondary);
 }
-
 .game-intro {
     text-align: center;
     font-size: 1.2rem;
-    color: #795548;
+    color: var(--text-muted);
     margin-bottom: 2rem;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
 }
-
 .game-content {
     display: flex;
     gap: 2rem;
     margin-bottom: 2rem;
 }
-
 .game-text {
     flex: 3;
-    background-color: rgba(248, 245, 240, 0.7);
+    background-color: var(--bg-light);
     padding: 2rem;
     border-radius: 10px;
-    border: 1px solid rgba(93, 64, 55, 0.1);
+    border: 1px solid rgba(var(--primary-rgb), 0.1);
 }
-
 #gameTitle {
     font-size: 1.8rem;
-    color: #D32F2F;
+    color: var(--primary);
     margin-bottom: 1rem;
-    border-bottom: 2px solid #FFD54F;
+    border-bottom: 2px solid var(--secondary);
     padding-bottom: 0.5rem;
 }
-
 #gameDescription {
     font-size: 1.2rem;
     line-height: 1.7;
-    color: #5D4037;
+    color: var(--text-dark);
     margin-bottom: 2rem;
 }
-
 .game-options {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-bottom: 1.5rem;
 }
-
-.option-btn {
-    background-color: #5D4037;
+.option-radio {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(145deg, var(--primary-dark), var(--primary));
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    border-left: 5px solid var(--secondary);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.option-radio:hover {
+    background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+    transform: translateX(10px);
+    box-shadow: 0 8px 15px rgba(var(--primary-rgb), 0.3);
+}
+.option-radio input[type="radio"] {
+    margin-right: 1rem;
+    accent-color: var(--primary);
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+}
+.option-radio label {
+    font-size: 1.1rem;
+    cursor: pointer;
+    flex: 1;
+}
+.choice-submit-btn {
+    background-color: var(--primary);
     color: white;
     border: none;
-    padding: 1.2rem 1.5rem;
-    font-size: 1.1rem;
-    text-align: left;
-    border-radius: 8px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    border-left: 5px solid #D32F2F;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-
-.option-btn:hover {
-    background-color: #D32F2F;
-    transform: translateX(10px);
-    box-shadow: 0 5px 15px rgba(211, 47, 47, 0.3);
+.choice-submit-btn:hover:not(:disabled) {
+    background-color: var(--primary-dark);
+    transform: scale(1.02);
 }
-
+.choice-submit-btn:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
 .game-ending {
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 2px solid #FFD54F;
+    border-top: 2px solid var(--secondary);
 }
-
 .hidden {
     display: none;
 }
-
 #endingTitle {
     font-size: 2rem;
-    color: #D32F2F;
+    color: var(--primary);
     margin-bottom: 1rem;
 }
-
 #endingDescription {
     font-size: 1.3rem;
     line-height: 1.7;
-    color: #5D4037;
+    color: var(--text-dark);
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background-color: rgba(255, 213, 79, 0.1);
+    background-color: rgba(var(--secondary-rgb), 0.1);
     border-radius: 8px;
 }
-
 .historical-context {
-    background-color: rgba(93, 64, 55, 0.05);
+    background-color: rgba(var(--primary-rgb), 0.05);
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 2rem;
-    border-left: 4px solid #5D4037;
+    border-left: 4px solid var(--primary);
 }
-
 .historical-context h4 {
-    color: #5D4037;
+    color: var(--primary);
     margin-bottom: 0.8rem;
     font-size: 1.2rem;
 }
-
 .historical-context p {
-    color: #795548;
+    color: var(--text-muted);
     line-height: 1.6;
 }
-
 .restart-btn {
-    background-color: #D32F2F;
+    background-color: var(--primary);
     color: white;
     border: none;
     padding: 1rem 2.5rem;
@@ -305,34 +494,29 @@ body {
     display: block;
     margin: 0 auto;
 }
-
 .restart-btn:hover {
-    background-color: #5D4037;
+    background-color: var(--primary-dark);
     transform: scale(1.05);
 }
-
 .game-stats {
     flex: 1;
-    background-color: rgba(255, 213, 79, 0.2);
+    background-color: rgba(var(--secondary-rgb), 0.2);
     padding: 1.5rem;
     border-radius: 10px;
-    border: 1px solid rgba(255, 213, 79, 0.4);
+    border: 1px solid rgba(var(--secondary-rgb), 0.4);
 }
-
 .game-stats h4 {
-    color: #5D4037;
+    color: var(--primary);
     margin-bottom: 1.5rem;
     text-align: center;
     font-size: 1.3rem;
 }
-
 .stats-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     margin-bottom: 2rem;
 }
-
 .stat {
     display: flex;
     justify-content: space-between;
@@ -340,48 +524,201 @@ body {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 6px;
 }
-
 .stat-label {
     font-weight: 600;
-    color: #5D4037;
+    color: var(--text-dark);
 }
-
 .stat-value {
     font-weight: 700;
-    color: #D32F2F;
+    color: var(--primary);
+}
+.reset-btn {
+    background: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.reset-btn:hover {
+    background: #b71c1c;
 }
 
+/* Player Info Panel */
+.player-info-panel {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: rgba(var(--primary-rgb), 0.1);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+.player-info-panel h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+#displayUsername, #displayPronoun {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Save Panel */
+.save-panel {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+.save-btn {
+    background-color: #2c5e2e;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.save-btn:hover {
+    background-color: #1e4a20;
+    transform: translateY(-2px);
+}
 .game-hint {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 1rem;
     border-radius: 6px;
-    border-left: 4px solid #FFD54F;
+    border-left: 4px solid var(--primary);
+    margin-top: 1.5rem;
 }
-
 .game-hint p {
-    color: #795548;
+    color: var(--text-muted);
     font-size: 0.9rem;
     line-height: 1.5;
 }
-
 .game-hint i {
-    color: #FFD54F;
+    color: var(--primary);
     margin-right: 0.5rem;
 }
 
-/* Footer */
-.footer {
-    background-color: #eeba2b;
-    color: #a44a3f;
-    text-align: left;
-    padding: 2rem;
-    margin-top: 3rem;
+/* ----- Comments Section ----- */
+.comments-section {
+    background: #f9f1e7;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 10px;
 }
-
-.footer p, .footer h3 {
-    margin: 0.5rem 0;
-    padding-left: 2rem;
-    text-indent: -2rem;
+.comments-section h3 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--secondary);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+.new-comment {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.new-comment textarea {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    resize: vertical;
+}
+.new-comment button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.new-comment button:hover {
+    background: var(--primary-dark);
+}
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.comment {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.comment.reply {
+    margin-left: 40px;
+    background: #fefefe;
+    border-left: 3px solid var(--primary);
+}
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+.comment-header .pronouns {
+    color: #666;
+    font-style: italic;
+}
+.comment-header .timestamp {
+    color: #999;
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+.comment-body {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+.comment-footer button {
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 0;
+}
+.comment-footer button:hover {
+    text-decoration: underline;
+}
+.reply-form {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 5px;
+}
+.reply-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    resize: vertical;
+}
+.reply-actions {
+    display: flex;
+    gap: 10px;
+}
+.reply-actions button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.reply-actions .submit-reply {
+    background: var(--primary);
+    color: white;
+}
+.reply-actions .cancel-reply {
+    background: #ccc;
 }
 
 /* Responsive */
@@ -392,7 +729,7 @@ body {
     .game-stats {
         order: -1;
     }
-    .civ-picker {
+    .civ-options {
         gap: 1rem;
     }
     .civ-card {
@@ -400,119 +737,15 @@ body {
         padding: 1.5rem 1rem;
     }
 }
-
-/* ========== CAROUSEL STYLES ========== */
-.carousel-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2rem 0 3rem;
-    padding: 0 40px;
-}
-
-.carousel-track-container {
-    overflow: hidden;
-    width: 100%;
-    max-width: 900px;
-}
-
-.carousel-track {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-card {
-    flex: 0 0 300px; /* Fixed width for each card */
-    margin: 0 10px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    padding: 2rem 1.5rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.carousel-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
-
-.carousel-card.selected {
-    border-color: #9b111e;
-    background-color: #fff5f0;
-    transform: scale(1.05);
-    box-shadow: 0 15px 35px rgba(155, 17, 30, 0.2);
-}
-
-.carousel-btn {
-    background-color: #9b111e;
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 10;
-}
-
-.carousel-btn:hover {
-    background-color: #e0b23b;
-    transform: scale(1.1);
-}
-
-.carousel-btn:active {
-    transform: scale(0.95);
-}
-
-/* Banner background update */
-.simulator-banner {
-    transition: background-image 0.5s ease-in-out;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-}
-
-.simulator-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* dark overlay for readability */
-}
-
-.simulator-banner > div {
-    position: relative;
-    z-index: 2;
-}
-
-/* Remove old civ-picker styles if any */
-.civ-picker {
-    display: none; /* Hide old selector */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .carousel-card {
-        flex: 0 0 250px;
-        padding: 1.5rem 1rem;
+@media (max-width: 600px) {
+    .banner-overlay h2 {
+        font-size: 2.5rem;
     }
-    .carousel-container {
-        padding: 0 20px;
+    .banner-overlay p {
+        font-size: 1.2rem;
+    }
+    .civ-card {
+        width: 100%;
+        max-width: 280px;
     }
 }
-
