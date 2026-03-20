@@ -84,4 +84,16 @@ Our current website implements basic user authentication, a branching narrative 
         * How it works: Clicking the trash shows a confirmation dialog. If confirmed, the comment is removed from globalComments. If the deleted comment was a parent, all its replies are also removed (because they reference the parent ID). The view is then refreshed.
         * Purpose: Gives users full control to remove content they no longer wish to be associated with.
 
+4. Rating System, **Purpose:** We want to promote convenience and transparency for users to offer security with anonymity
+    * Anonymous Ratings
+        * Can be used by users who do not have an account or wish to anonymously rate the website with optional short text reviews
+        * We plan to implement:
+            * 5-Star rating system
+            * CRUD;
+                * Creation: Creation of new reviews
+                * Read: Displaying reviews and ratings
+                * Update: Users can update these reviews and ratings and ratings would be averaged
+                * Delete: Users can delete their ratings and reviews
+
 #### Wireframes
+The [Canva link](https://www.canva.com/design/DAG3LPkhbSI/j_Vml09AuZj0700VvMv_iQ/edit?utm_content=DAG3LPkhbSI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) of the wireframes about data collection and CRUD implementation is found in this section.
